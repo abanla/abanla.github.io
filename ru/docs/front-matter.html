@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Шапка файла | Hexo</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://hexo.io/ru/docs/front-matter.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://hexo.io/ru/docs/front-matter">
+    
+      <link rel="alternative" hreflang="zh-tw" href="https://hexo.io/zh-tw/ru/docs/front-matter">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://hexo.io/zh-cn/ru/docs/front-matter">
+    
+      <link rel="alternative" hreflang="ru" href="https://hexo.io/ru/ru/docs/front-matter">
+    
+      <link rel="alternative" hreflang="ko" href="https://hexo.io/ko/ru/docs/front-matter">
+    
+      <link rel="alternative" hreflang="pt-br" href="https://hexo.io/pt-br/ru/docs/front-matter">
+    
+      <link rel="alternative" hreflang="th" href="https://hexo.io/th/ru/docs/front-matter">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="Шапка файла это блок в формате YAML или JSON, расположенный в начале файла, который используется для изменения настроек написанного материала. Окончание шапки определяется строкой --- или ;;; при напи">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Шапка файла">
+<meta property="og:url" content="https://hexo.io/ru/docs/front-matter">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Шапка файла это блок в формате YAML или JSON, расположенный в начале файла, который используется для изменения настроек написанного материала. Окончание шапки определяется строкой --- или ;;; при напи">
+<meta property="og:locale" content="ru_RU">
+<meta property="article:published_time" content="2024-01-09T07:29:52.081Z">
+<meta property="article:modified_time" content="2024-01-09T07:29:52.081Z">
+<meta property="article:author" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="hexojs">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48498357-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/ru/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/ru/docs/" class="main-nav-link">Документация</a><a href="/ru/api/" class="main-nav-link">API</a><a href="/news/" class="main-nav-link">Новости</a><a href="/plugins/" class="main-nav-link">Плагины</a><a href="/themes/" class="main-nav-link">Темы</a><a href="/about/" class="main-nav-link">About</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>Русский</span></label>
+      <select id="lang-select" data-canonical="docs/front-matter.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-tw">正體中文</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+          <option value="ru" selected>Русский</option>
+        
+          <option value="ko">한국어</option>
+        
+          <option value="pt-br">Português (Brasil)</option>
+        
+          <option value="th">ภาษาไทย</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Шапка файла</h1>
+                <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/site/edit/master/source/ru/docs/front-matter.md" class="article-edit-link" title="Предложить улучшение"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>Шапка файла это блок в формате YAML или JSON, расположенный в начале файла, который используется для изменения настроек написанного материала. Окончание шапки определяется строкой <code>---</code> или <code>;;;</code> при написании в формате JSON.</p>
+<p><strong>YAML</strong></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hello</span> <span class="string">World</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2013</span><span class="string">/7/13</span> <span class="number">20</span><span class="string">:46:25</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>JSON</strong></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Hello World&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;date&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2013/7/13 20:46:25&quot;</span></span><br><span class="line">;;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Параметры-и-значения-по-умолчанию" class="article-heading"><a href="#Параметры-и-значения-по-умолчанию" class="headerlink" title="Параметры и значения по умолчанию"></a>Параметры и значения по умолчанию<a class="article-anchor" href="#Параметры-и-значения-по-умолчанию" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+<th>Значение по умолчанию</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>layout</code></td>
+<td>Макет</td>
+<td><a href="/ru/docs/configuration#%D0%9D%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5"><code>config.default_layout</code></a></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>Заголовок</td>
+<td>Filename (posts only)</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>Дата публикации</td>
+<td>Дата создания файла</td>
+</tr>
+<tr>
+<td><code>updated</code></td>
+<td>Дата обновления</td>
+<td>Дата обновления файла</td>
+</tr>
+<tr>
+<td><code>comments</code></td>
+<td>Включение поддержки комментариев в посте</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td>Теги (Недоступно для страниц)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>categories</code></td>
+<td>Категории (Не доступно для страниц)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>permalink</code></td>
+<td>Переопределяет ссылку по умолчанию. Должна заканчиваться <code>/</code> или <code>.html</code></td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>excerpt</code></td>
+<td>Отрывок страницы в виде простого текста. Используйте <a href="/ru/docs/tag-plugins#%D0%9E%D1%82%D1%80%D1%8B%D0%B2%D0%BE%D0%BA-%D0%BF%D0%BE%D1%81%D1%82%D0%B0">этот плагин</a> для оформления текста</td>
+<td></td>
+</tr>
+<tr>
+<td><code>disableNunjucks</code></td>
+<td>Отключить отображение тегов Nunjucks <code>&#123;&#123; &#125;&#125;</code>&#x2F;<code>&#123;% %&#125;</code> и <a href="/ru/docs/tag-plugins">плагины тегов</a> при включении</td>
+<td></td>
+</tr>
+<tr>
+<td><code>lang</code></td>
+<td>Установите язык для переопределения <a href="/ru/docs/internationalization#%D0%9F%D1%83%D1%82%D1%8C">автоопределения</a></td>
+<td>Берётся из <code>_config.yml</code></td>
+</tr>
+<tr>
+<td><code>published</code></td>
+<td>Whether the post should be published</td>
+<td>For posts under <code>_posts</code>, it is <code>true</code>, and for posts under <code>_draft</code>, it is <code>false</code></td>
+</tr>
+</tbody></table>
+<h4 id="Макет" class="article-heading"><a href="#Макет" class="headerlink" title="Макет"></a>Макет<a class="article-anchor" href="#Макет" aria-hidden="true"></a></h4><p>Умолчания для макета <code>поста</code>, берутся в соответствии со значениеми <a href="(https://hexo.io/ru/docs/configuration#%D0%9D%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5)"><code>параметров</code></a> в файле <code>_config.yml</code>. Когда в статье макет отключён (<code>layout: false</code>), он не будет обрабатываться с темой. Тем не менее, он все равно будет отображаться любым доступным средством визуализации: если статья написана в Markdown и средстве визуализации Markdown (например, установлен по умолчанию <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo-renderer-marked">hexo-renderer-marked</a>) , он будет отображён в HTML.</p>
+<p><a href="/ru/docs/tag-plugins">Плагины тегов</a> всегда обрабатываются независимо от макета, если только они не отключены настройкой <code>disableNunjucks</code> или [средство визуализации] (&#x2F;api&#x2F;renderer#Disable-Nunjucks-tags).</p>
+<h4 id="Категории-и-теги" class="article-heading"><a href="#Категории-и-теги" class="headerlink" title="Категории и теги"></a>Категории и теги<a class="article-anchor" href="#Категории-и-теги" aria-hidden="true"></a></h4><p>Только посты поддерживают использование категорий и тегов. Категории считываются в порядке их написания, в результате чего сохраняется иерархия классификации и подклассификации. Теги определены на одном иерархическом уровне, не важен порядок написания.</p>
+<p><strong>Например</strong></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Sports</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Baseball</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Injury</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Fight</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Shocking</span></span><br></pre></td></tr></table></figure>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2024-01-09T07:29:52.081Z" itemprop="dateModified">Последнее обновление: 2024-01-09</time>
+                <a href="writing.html" class="article-footer-prev" title="Написание"><i class="fa fa-chevron-left"></i><span>Пред</span></a><a href="tag-plugins.html" class="article-footer-next" title="Плагины тегов"><span>След</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'hexojs';
+  var disqus_url = 'https://hexo.io/ru/docs/front-matter.html';
+  var disqus_title = "Шапка файла";
+  var disqus_config = function(){
+    this.language = 'ru';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Содержание</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%D0%9F%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D0%B8-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE-%D1%83%D0%BC%D0%BE%D0%BB%D1%87%D0%B0%D0%BD%D0%B8%D1%8E"><span class="toc-text">Параметры и значения по умолчанию</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%D0%9C%D0%B0%D0%BA%D0%B5%D1%82"><span class="toc-text">Макет</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8-%D0%B8-%D1%82%D0%B5%D0%B3%D0%B8"><span class="toc-text">Категории и теги</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Наверх</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Начало работы</strong><a href="index.html" class="sidebar-link">Обзор</a><a href="setup.html" class="sidebar-link">Установка</a><a href="configuration.html" class="sidebar-link">Конфигурация</a><a href="commands.html" class="sidebar-link">Команды</a><a href="migration.html" class="sidebar-link">Миграция</a><strong class="sidebar-title">Основы</strong><a href="writing.html" class="sidebar-link">Написание</a><a href="front-matter.html" class="sidebar-link current">Шапка файла</a><a href="tag-plugins.html" class="sidebar-link">Плагины тегов</a><a href="asset-folders.html" class="sidebar-link">Папки с материалами</a><a href="data-files.html" class="sidebar-link">Файлы с данными</a><a href="server.html" class="sidebar-link">Сервер</a><a href="generating.html" class="sidebar-link">Генерация</a><strong class="sidebar-title">Публикация</strong><a href="github-pages.html" class="sidebar-link">GitHub Pages</a><a href="gitlab-pages.html" class="sidebar-link">GitLab Pages</a><a href="one-command-deployment.html" class="sidebar-link">Размещение одной командой</a><strong class="sidebar-title">Кастомизация</strong><a href="permalinks.html" class="sidebar-link">Постоянные ссылки</a><a href="themes.html" class="sidebar-link">Темы</a><a href="templates.html" class="sidebar-link">Шаблоны</a><a href="variables.html" class="sidebar-link">Переменные</a><a href="helpers.html" class="sidebar-link">Помощники</a><a href="internationalization.html" class="sidebar-link">Интернационализация (i18n)</a><a href="syntax-highlight.html" class="sidebar-link">Syntax Highlight</a><a href="plugins.html" class="sidebar-link">Плагины</a><strong class="sidebar-title">Разное</strong><a href="troubleshooting.html" class="sidebar-link">Решение проблем</a><a href="contributing.html" class="sidebar-link">Содействие</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2024 <a href="https://github.com/hexojs/hexo/graphs/contributors" rel="external nofollow noreferrer" target="_blank">Hexo</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://www.netlify.com/" rel="external nofollow noreferrer" class="footer-link" target="_blank"><img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" style="margin-bottom:-14px"/></a>
+      <a href="https://twitter.com/hexojs" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/hexojs/hexo" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/ru/docs/" class="mobile-nav-link">Документация</a><a href="/ru/api/" class="mobile-nav-link">API</a><a href="/news/" class="mobile-nav-link">Новости</a><a href="/plugins/" class="mobile-nav-link">Плагины</a><a href="/themes/" class="mobile-nav-link">Темы</a><a href="/about/" class="mobile-nav-link">About</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/hexojs/hexo" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Начало работы</strong><a href="index.html" class="mobile-nav-link">Обзор</a><a href="setup.html" class="mobile-nav-link">Установка</a><a href="configuration.html" class="mobile-nav-link">Конфигурация</a><a href="commands.html" class="mobile-nav-link">Команды</a><a href="migration.html" class="mobile-nav-link">Миграция</a><strong class="mobile-nav-title">Основы</strong><a href="writing.html" class="mobile-nav-link">Написание</a><a href="front-matter.html" class="mobile-nav-link current">Шапка файла</a><a href="tag-plugins.html" class="mobile-nav-link">Плагины тегов</a><a href="asset-folders.html" class="mobile-nav-link">Папки с материалами</a><a href="data-files.html" class="mobile-nav-link">Файлы с данными</a><a href="server.html" class="mobile-nav-link">Сервер</a><a href="generating.html" class="mobile-nav-link">Генерация</a><strong class="mobile-nav-title">Публикация</strong><a href="github-pages.html" class="mobile-nav-link">GitHub Pages</a><a href="gitlab-pages.html" class="mobile-nav-link">GitLab Pages</a><a href="one-command-deployment.html" class="mobile-nav-link">Размещение одной командой</a><strong class="mobile-nav-title">Кастомизация</strong><a href="permalinks.html" class="mobile-nav-link">Постоянные ссылки</a><a href="themes.html" class="mobile-nav-link">Темы</a><a href="templates.html" class="mobile-nav-link">Шаблоны</a><a href="variables.html" class="mobile-nav-link">Переменные</a><a href="helpers.html" class="mobile-nav-link">Помощники</a><a href="internationalization.html" class="mobile-nav-link">Интернационализация (i18n)</a><a href="syntax-highlight.html" class="mobile-nav-link">Syntax Highlight</a><a href="plugins.html" class="mobile-nav-link">Плагины</a><strong class="mobile-nav-title">Разное</strong><a href="troubleshooting.html" class="mobile-nav-link">Решение проблем</a><a href="contributing.html" class="mobile-nav-link">Содействие</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>Русский</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/front-matter.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-tw">正體中文</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+        <option value="ru" selected>Русский</option>
+      
+        <option value="ko">한국어</option>
+      
+        <option value="pt-br">Português (Brasil)</option>
+      
+        <option value="th">ภาษาไทย</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+</body>
+</html>

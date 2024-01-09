@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Hexo 7.0.0 (RC1) Released | Hexo</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://hexo.io/news/2023/03/18/hexo-7-0-0-rc1-released/index.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="GitHub Release Note: v7.0.0 (RC1)  Migration GuideSome of the built-in tags have been dropped (E.g. gist, youtube, jsfiddle, and vimeo). If you use those tags in your existing blog posts, you can ins">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 7.0.0 (RC1) Released">
+<meta property="og:url" content="https://hexo.io/news/2023/03/18/hexo-7-0-0-rc1-released/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="GitHub Release Note: v7.0.0 (RC1)  Migration GuideSome of the built-in tags have been dropped (E.g. gist, youtube, jsfiddle, and vimeo). If you use those tags in your existing blog posts, you can ins">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-18T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-09T07:29:52.029Z">
+<meta property="article:author" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="hexojs">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48498357-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api/" class="main-nav-link">API</a><a href="/news/" class="main-nav-link">News</a><a href="/plugins/" class="main-nav-link">Plugins</a><a href="/themes/" class="main-nav-link">Themes</a><a href="/about/" class="main-nav-link">About</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-tw">正體中文</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+          <option value="ru">Русский</option>
+        
+          <option value="ko">한국어</option>
+        
+          <option value="pt-br">Português (Brasil)</option>
+        
+          <option value="th">ภาษาไทย</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1 class="article-title" itemprop="name">Hexo 7.0.0 (RC1) Released</h1>
+    
+    <a href="/news/2023/03/18/hexo-7-0-0-rc1-released/" class="article-date"><time datetime="2023-03-18T00:00:00.000Z">2023-03-18</time></a>
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/releases/tag/v7.0.0-rc1">GitHub Release Note: v7.0.0 (RC1)</a></p>
+</blockquote>
+<h2 id="Migration-Guide" class="article-heading"><a href="#Migration-Guide" class="headerlink" title="Migration Guide"></a>Migration Guide<a class="article-anchor" href="#Migration-Guide" aria-hidden="true"></a></h2><p>Some of the built-in tags have been dropped (E.g. <code>gist</code>, <code>youtube</code>, <code>jsfiddle</code>, and <code>vimeo</code>). If you use those tags in your existing blog posts, you can install <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo-tag-embed">hexo-tag-embed</a> to continue using them with Hexo 7.0.0.</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm i hexo-tag-embed</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>Note</strong></p>
+<p>No need to install if you are not using (or will not use) <code>gist</code>, <code>youtube</code>, <code>jsfiddle</code>, <code>vimeo</code> tags in your post or page.</p>
+</blockquote>
+<h2 id="Breaking-Changes" class="article-heading"><a href="#Breaking-Changes" class="headerlink" title="Breaking Changes"></a>Breaking Changes<a class="article-anchor" href="#Breaking-Changes" aria-hidden="true"></a></h2><ul>
+<li>chore: require node14+ by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/yoshinorin">@yoshinorin</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5061">#5061</a></li>
+<li>Dropped tag features. Please see <code>Migration Guide</code> section.<ul>
+<li>refactor: drop <code>gist</code> tag by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/yoshinorin">@yoshinorin</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5067">#5067</a></li>
+<li>refactor: drop <code>youtube</code> tag by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/yoshinorin">@yoshinorin</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5064">#5064</a></li>
+<li>refactor: drop <code>jsfiddle</code> tag by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/yoshinorin">@yoshinorin</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5066">#5066</a></li>
+<li>refactor: drop <code>vimeo</code> tag by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/yoshinorin">@yoshinorin</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5065">#5065</a></li>
+</ul>
+</li>
+<li>Dropped features<ul>
+<li>refactor: drop <code>external_link</code> boolean type by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/yoshinorin">@yoshinorin</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5063">#5063</a></li>
+<li>refactor: drop <code>use_date_for_updated</code> option for <code>updated_option</code> by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/yoshinorin">@yoshinorin</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5062">#5062</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Notable-Changes" class="article-heading"><a href="#Notable-Changes" class="headerlink" title="Notable Changes"></a>Notable Changes<a class="article-anchor" href="#Notable-Changes" aria-hidden="true"></a></h2><ul>
+<li>Migrate TypeSctipt<ul>
+<li>refactor: prepare for migration to typescript by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stevenjoezhang">@stevenjoezhang</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5094">#5094</a></li>
+<li>refactor: migrate typescript by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stevenjoezhang">@stevenjoezhang</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5092">#5092</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="New-Features" class="article-heading"><a href="#New-Features" class="headerlink" title="New Features"></a>New Features<a class="article-anchor" href="#New-Features" aria-hidden="true"></a></h2><ul>
+<li>feat(tags&#x2F;post_link): search for both slug and title by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stevenjoezhang">@stevenjoezhang</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5114">#5114</a></li>
+<li>feat(open_graph): drop google_plus by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stevenjoezhang">@stevenjoezhang</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5115">#5115</a></li>
+<li>feat(tags&#x2F;img): support quotes in img title and alt by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stevenjoezhang">@stevenjoezhang</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5112">#5112</a></li>
+<li>feat(console-new): support default title from path by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xu-song">@xu-song</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/4714">#4714</a></li>
+<li>feat: add an option to disable titlecase in post by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/renbaoshuo">@renbaoshuo</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5156">#5156</a></li>
+</ul>
+<h2 id="Fixes" class="article-heading"><a href="#Fixes" class="headerlink" title="Fixes"></a>Fixes<a class="article-anchor" href="#Fixes" aria-hidden="true"></a></h2><ul>
+<li>fix(#1099): hexo server error when changing the config by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/D-Sketon">@D-Sketon</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5055">#5055</a></li>
+<li>fix: exclude_languages does not work in code blocks by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stevenjoezhang">@stevenjoezhang</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5088">#5088</a></li>
+<li>When promisifying, store does not preserve disableNunjucks property by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/tcr">@tcr</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/2670">#2670</a></li>
+<li>fix(post): skip before_post_render and after_post_render on non-posts by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stevenjoezhang">@stevenjoezhang</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/heojs/hexo/pull/5118">#5118</a></li>
+<li>fix: Failed to create post with special character title by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/D-Sketon">@D-Sketon</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5149">#5149</a></li>
+<li>fix(box): check for invalid file by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stevenjoezhang">@stevenjoezhang</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5173">#5173</a></li>
+</ul>
+<h2 id="Performance" class="article-heading"><a href="#Performance" class="headerlink" title="Performance"></a>Performance<a class="article-anchor" href="#Performance" aria-hidden="true"></a></h2><ul>
+<li>perf: reduce the number of traversals through posts by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stevenjoezhang">@stevenjoezhang</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5119">#5119</a></li>
+</ul>
+<h2 id="Refactor" class="article-heading"><a href="#Refactor" class="headerlink" title="Refactor"></a>Refactor<a class="article-anchor" href="#Refactor" aria-hidden="true"></a></h2><ul>
+<li>refactor highlight: add extend api for highlight by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stevenjoezhang">@stevenjoezhang</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5095">#5095</a></li>
+<li>refactor: use the <code>WHATWG URL API</code> instead of <code>url.resolve</code> by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/yoshinorin">@yoshinorin</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5136">#5136</a></li>
+</ul>
+<h2 id="Dependencies" class="article-heading"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies<a class="article-anchor" href="#Dependencies" aria-hidden="true"></a></h2><ul>
+<li>chore: bump sinon from 13.0.2 to 14.0.0 by @dependabot in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/4965">#4965</a></li>
+<li>chore: bump lint-staged from 11.2.6 to 13.0.3 by @dependabot in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5008">#5008</a></li>
+<li>chore: bump husky from 7.0.4 to 8.0.1 by @dependabot in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/4966">#4966</a></li>
+<li>chore: bump hexo-fs from 3.1.0 to 4.0.0 by @dependabot in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5077">#5077</a></li>
+<li>chore: bump hexo-renderer-marked from 5.0.0 to 6.0.0 by @dependabot in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5081">#5081</a></li>
+<li>chore: bump hexo-front-matter from 3.0.0 to 4.0.0 by @dependabot in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5087">#5087</a></li>
+<li>chore: bump abbrev from 1.1.1 to 2.0.0 by @dependabot in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5093">#5093</a></li>
+<li>chore: bump hexo-i18n from 1.0.0 to 2.0.0 by @dependabot in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5099">#5099</a></li>
+<li>chore: bump hexo-util from 2.7.0 to 3.0.1 by @dependabot in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5107">#5107</a></li>
+<li>chore: bump warehouse from 4.0.2 to 5.0.0 by @dependabot in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5101">#5101</a></li>
+<li>chore(deps): update <code>hexo-log</code> from <code>3.2.0</code> to <code>4.0.1</code> by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/yoshinorin">@yoshinorin</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5096">#5096</a></li>
+<li>chore: bump sinon from 14.0.2 to 15.0.0 by @dependabot in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5121">#5121</a></li>
+</ul>
+<h2 id="Test" class="article-heading"><a href="#Test" class="headerlink" title="Test"></a>Test<a class="article-anchor" href="#Test" aria-hidden="true"></a></h2><ul>
+<li>test(benchmark): update hexo-many-posts repo by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/SukkaW">@SukkaW</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5128">#5128</a></li>
+<li>test(list_route): improve coverage by <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/stevenjoezhang">@stevenjoezhang</a> in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5097">#5097</a></li>
+</ul>
+<h2 id="New-Contributors" class="article-heading"><a href="#New-Contributors" class="headerlink" title="New Contributors"></a>New Contributors<a class="article-anchor" href="#New-Contributors" aria-hidden="true"></a></h2><ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/D-Sketon">@D-Sketon</a> made their first contribution in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/5055">#5055</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xu-song">@xu-song</a> made their first contribution in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/4714">#4714</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/tcr">@tcr</a> made their first contribution in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/pull/2670">#2670</a></li>
+</ul>
+<h2 id="Full-Changelog" class="article-heading"><a href="#Full-Changelog" class="headerlink" title="Full Changelog"></a>Full Changelog<a class="article-anchor" href="#Full-Changelog" aria-hidden="true"></a></h2><ul>
+<li>[#](<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo/compare/6.3.0...v7.0.0-rc1">https://github.com/hexojs/hexo/compare/6.3.0...v7.0.0-rc1</a></li>
+</ul>
+
+  </div>
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'hexojs';
+  var disqus_url = 'https://hexo.io/news/2023/03/18/hexo-7-0-0-rc1-released/index.html';
+  var disqus_title = "Hexo 7.0.0 (RC1) Released";
+  var disqus_config = function(){
+    this.language = 'en';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+</article>
+
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2024 <a href="https://github.com/hexojs/hexo/graphs/contributors" rel="external nofollow noreferrer" target="_blank">Hexo</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://www.netlify.com/" rel="external nofollow noreferrer" class="footer-link" target="_blank"><img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" style="margin-bottom:-14px"/></a>
+      <a href="https://twitter.com/hexojs" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/hexojs/hexo" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api/" class="mobile-nav-link">API</a><a href="/news/" class="mobile-nav-link">News</a><a href="/plugins/" class="mobile-nav-link">Plugins</a><a href="/themes/" class="mobile-nav-link">Themes</a><a href="/about/" class="mobile-nav-link">About</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/hexojs/hexo" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-tw">正體中文</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+        <option value="ru">Русский</option>
+      
+        <option value="ko">한국어</option>
+      
+        <option value="pt-br">Português (Brasil)</option>
+      
+        <option value="th">ภาษาไทย</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

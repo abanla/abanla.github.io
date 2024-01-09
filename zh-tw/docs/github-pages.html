@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>在 GitHub Pages 上部署 Hexo | Hexo</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://hexo.io/zh-tw/docs/github-pages.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://hexo.io/zh-tw/docs/github-pages">
+    
+      <link rel="alternative" hreflang="zh-tw" href="https://hexo.io/zh-tw/zh-tw/docs/github-pages">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://hexo.io/zh-cn/zh-tw/docs/github-pages">
+    
+      <link rel="alternative" hreflang="ru" href="https://hexo.io/ru/zh-tw/docs/github-pages">
+    
+      <link rel="alternative" hreflang="ko" href="https://hexo.io/ko/zh-tw/docs/github-pages">
+    
+      <link rel="alternative" hreflang="pt-br" href="https://hexo.io/pt-br/zh-tw/docs/github-pages">
+    
+      <link rel="alternative" hreflang="th" href="https://hexo.io/th/zh-tw/docs/github-pages">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="本文將使用 GitHub Actions 部屬至 GitHub Pages，此方法適用於公開或私人儲存庫。若你不希望將整個資料夾推上 GitHub，請參閱 一鍵部屬。  建立名為 username.github.io 的儲存庫，username 是你在 GitHub 上的使用者名稱，若之前已將 Hexo 上傳至其他儲存庫，將該儲存庫重命名即可。 將 Hexo 檔案 push 到儲存庫的預設分支，預">
+<meta property="og:type" content="website">
+<meta property="og:title" content="在 GitHub Pages 上部署 Hexo">
+<meta property="og:url" content="https://hexo.io/zh-tw/docs/github-pages">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本文將使用 GitHub Actions 部屬至 GitHub Pages，此方法適用於公開或私人儲存庫。若你不希望將整個資料夾推上 GitHub，請參閱 一鍵部屬。  建立名為 username.github.io 的儲存庫，username 是你在 GitHub 上的使用者名稱，若之前已將 Hexo 上傳至其他儲存庫，將該儲存庫重命名即可。 將 Hexo 檔案 push 到儲存庫的預設分支，預">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-01-09T07:29:52.547Z">
+<meta property="article:modified_time" content="2024-01-09T07:29:52.547Z">
+<meta property="article:author" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="hexojs">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48498357-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-tw/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-tw/docs/" class="main-nav-link">文件</a><a href="/zh-tw/api/" class="main-nav-link">API</a><a href="/news/" class="main-nav-link">新聞</a><a href="/plugins/" class="main-nav-link">外掛</a><a href="/themes/" class="main-nav-link">主題</a><a href="/about/" class="main-nav-link">About</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>正體中文</span></label>
+      <select id="lang-select" data-canonical="docs/github-pages.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-tw" selected>正體中文</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+          <option value="ru">Русский</option>
+        
+          <option value="ko">한국어</option>
+        
+          <option value="pt-br">Português (Brasil)</option>
+        
+          <option value="th">ภาษาไทย</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">在 GitHub Pages 上部署 Hexo</h1>
+                <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/site/edit/master/source/zh-tw/docs/github-pages.md" class="article-edit-link" title="改善這篇文件"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>本文將使用 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.github.com/en/actions">GitHub Actions</a> 部屬至 GitHub Pages，此方法適用於公開或私人儲存庫。若你不希望將整個資料夾推上 GitHub，請參閱 <a href="#%E4%B8%80%E9%8D%B5%E9%83%A8%E5%B1%AC">一鍵部屬</a>。</p>
+<ol>
+<li>建立名為 <b><em>username</em>.github.io</b> 的儲存庫，username 是你在 GitHub 上的使用者名稱，若之前已將 Hexo 上傳至其他儲存庫，將該儲存庫重命名即可。</li>
+<li>將 Hexo 檔案 push 到儲存庫的預設分支，預設分支通常名為 <strong>main</strong>，舊一點的儲存庫可能名為 <strong>master</strong>。</li>
+</ol>
+<ul>
+<li><p>將 <code>main</code> 分支 push 到 GitHub：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git push -u origin main</span><br></pre></td></tr></table></figure></li>
+<li><p>預設情況下 <code>public/</code> 不會被上傳(也不該被上傳)，確認 <code>.gitignore</code> 檔案中包含一行 <code>public/</code>。整體資料夾結構應會與<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo-starter">範例儲存庫</a>極為相似。</p>
+</li>
+</ul>
+<ol start="3">
+<li>使用 <code>node --version</code> 指令檢查你電腦上的 Node.js 版本，並記下該版本 (例如：<code>v16.y.z</code>)</li>
+<li>在儲存庫中建立 <code>.github/workflows/pages.yml</code>，並填入以下內容 (將 <code>16</code> 替換為上個步驟中記下的版本)：</li>
+</ol>
+<figure class="highlight yml"><figcaption><span>.github/workflows/pages.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Pages</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">main</span>  <span class="comment"># default branch</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">pages:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">permissions:</span></span><br><span class="line">      <span class="attr">contents:</span> <span class="string">write</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="comment"># If your repository depends on submodule, please see: https://github.com/actions/checkout</span></span><br><span class="line">          <span class="attr">submodules:</span> <span class="string">recursive</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Use</span> <span class="string">Node.js</span> <span class="number">16.</span><span class="string">x</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="string">&#x27;16&#x27;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Cache</span> <span class="string">NPM</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/cache@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">path:</span> <span class="string">node_modules</span></span><br><span class="line">          <span class="attr">key:</span> <span class="string">$&#123;&#123;</span> <span class="string">runner.OS</span> <span class="string">&#125;&#125;-npm-cache</span></span><br><span class="line">          <span class="attr">restore-keys:</span> <span class="string">|</span></span><br><span class="line"><span class="string">            $&#123;&#123; runner.OS &#125;&#125;-npm-cache</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">build</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">github_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>當部屬作業完成後，產生的頁面會放在儲存庫中的 <code>gh-pages</code> 分支。</li>
+<li>在儲存庫中前往 <strong>Settings</strong> &gt; <strong>Pages</strong> &gt; <strong>Source</strong>，並將 branch 改為 <code>gh-pages</code>。</li>
+<li>前往 <em>username</em>.github.io 查看網站。</li>
+</ol>
+<blockquote class="note info"><strong class="note-title">CNAME</strong><p>若你使用 <code>CNAME</code> 自訂域名，你需要在 <code>source/</code> 資料夾中新增 <code>CNAME</code> 檔案。<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">更多資訊</a></p>
+</blockquote>
+
+<h2 id="專案頁面" class="article-heading"><a href="#專案頁面" class="headerlink" title="專案頁面"></a>專案頁面<a class="article-anchor" href="#專案頁面" aria-hidden="true"></a></h2><p>如果你希望網站部署在 <code>&lt;你的 GitHub 用戶名&gt;.github.io</code> 的子目錄中：</p>
+<ol>
+<li>開啟你在 GitHub 的儲存庫，並前往 <strong>Settings</strong> 頁面。更改你的 <strong>Repository name</strong> 使你的部落格網址變成 <b>username.github.io&#x2F;<em>repository</em></b>，<em>repository</em> 可以是任何名稱，例如 <em>blog</em> 或 <em>hexo</em>。</li>
+<li>編輯你的 <strong>_config.yml</strong>，將 <code>url:</code> 更改為 <b>https:&#x2F;&#x2F;<em>username</em>.github.io&#x2F;<em>repository</em></b>。</li>
+<li>Commit 並 push 到預設分支上。</li>
+<li>當部屬完成後，在 <code>gh-pages</code> 分支可以找到產生的網頁。</li>
+<li>在 GitHub 儲存庫中，前往 <strong>Settings</strong> &gt; <strong>Pages</strong> &gt; <strong>Source</strong>，並將 branch 改為 <code>gh-pages</code> 後儲存。</li>
+<li>前往 <em>username</em>.github.io&#x2F;<em>repository</em> 查看。</li>
+</ol>
+<h2 id="一鍵部屬" class="article-heading"><a href="#一鍵部屬" class="headerlink" title="一鍵部屬"></a>一鍵部屬<a class="article-anchor" href="#一鍵部屬" aria-hidden="true"></a></h2><p>以下教學改編自 <a href="/docs/one-command-deployment">一鍵部署</a> .</p>
+<ol>
+<li>安裝 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>.</li>
+<li>清空 <code>_config.yml</code> 的現有資料，並新增以下組態:</li>
+</ol>
+  <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&lt;username&gt;/&lt;project&gt;</span></span><br><span class="line">  <span class="comment"># example, https://github.com/hexojs/hexojs.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>執行 <code>hexo clean &amp;&amp; hexo deploy</code> 。</li>
+<li>瀏覽 <code>&lt;GitHub 用戶名&gt;.github.io</code> 檢查你的網站能否運作。</li>
+</ol>
+<blockquote class="note info"><strong class="note-title">Windows 用戶</strong><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/awesome-hexo">Awesome Hexo</a> 中收錄了更多有關在 GitHub Pages 上部署 Hexo ，你也可透過搜尋引擎了解更多。<br>歡迎更多有誌之士前來改善 Hexo 文檔，不勝感激。</p>
+</blockquote>
+
+<h2 id="參考連結" class="article-heading"><a href="#參考連結" class="headerlink" title="參考連結"></a>參考連結<a class="article-anchor" href="#參考連結" aria-hidden="true"></a></h2><ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://help.github.com/categories/github-pages-basics/">GitHub Pages 使用文檔</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/marketplace/actions/github-pages-action">peaceiris&#x2F;actions-gh-pages</a></li>
+</ul>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2024-01-09T07:29:52.547Z" itemprop="dateModified">上次更新：2024-01-09</time>
+                <a href="generating.html" class="article-footer-prev" title="產生檔案"><i class="fa fa-chevron-left"></i><span>上一頁</span></a><a href="gitlab-pages.html" class="article-footer-next" title="GitLab Pages"><span>下一頁</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'hexojs';
+  var disqus_url = 'https://hexo.io/zh-tw/docs/github-pages.html';
+  var disqus_title = "在 GitHub Pages 上部署 Hexo";
+  var disqus_config = function(){
+    this.language = 'zh_TW';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目錄</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%88%E6%A1%88%E9%A0%81%E9%9D%A2"><span class="toc-text">專案頁面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%8D%B5%E9%83%A8%E5%B1%AC"><span class="toc-text">一鍵部屬</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%83%E8%80%83%E9%80%A3%E7%B5%90"><span class="toc-text">參考連結</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到頁首</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">開始使用</strong><a href="index.html" class="sidebar-link">概覽</a><a href="setup.html" class="sidebar-link">建立</a><a href="configuration.html" class="sidebar-link">配置</a><a href="commands.html" class="sidebar-link">指令</a><a href="migration.html" class="sidebar-link">轉移</a><strong class="sidebar-title">基本操作</strong><a href="writing.html" class="sidebar-link">寫作</a><a href="front-matter.html" class="sidebar-link">Front-matter</a><a href="tag-plugins.html" class="sidebar-link">標籤外掛</a><a href="asset-folders.html" class="sidebar-link">資產資料夾</a><a href="data-files.html" class="sidebar-link">資料檔案</a><a href="server.html" class="sidebar-link">伺服器</a><a href="generating.html" class="sidebar-link">產生檔案</a><strong class="sidebar-title">佈署</strong><a href="github-pages.html" class="sidebar-link current">GitHub Pages</a><a href="gitlab-pages.html" class="sidebar-link">GitLab Pages</a><a href="one-command-deployment.html" class="sidebar-link">One-Command Deployment</a><strong class="sidebar-title">自定</strong><a href="permalinks.html" class="sidebar-link">永久連結</a><a href="themes.html" class="sidebar-link">主題</a><a href="templates.html" class="sidebar-link">模版</a><a href="variables.html" class="sidebar-link">變數</a><a href="helpers.html" class="sidebar-link">輔助函數</a><a href="internationalization.html" class="sidebar-link">國際化 (i18n)</a><a href="syntax-highlight.html" class="sidebar-link">語法突顯</a><a href="plugins.html" class="sidebar-link">外掛</a><strong class="sidebar-title">其他</strong><a href="troubleshooting.html" class="sidebar-link">解決問題</a><a href="contributing.html" class="sidebar-link">貢獻</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2024 <a href="https://github.com/hexojs/hexo/graphs/contributors" rel="external nofollow noreferrer" target="_blank">Hexo</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://www.netlify.com/" rel="external nofollow noreferrer" class="footer-link" target="_blank"><img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" style="margin-bottom:-14px"/></a>
+      <a href="https://twitter.com/hexojs" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/hexojs/hexo" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-tw/docs/" class="mobile-nav-link">文件</a><a href="/zh-tw/api/" class="mobile-nav-link">API</a><a href="/news/" class="mobile-nav-link">新聞</a><a href="/plugins/" class="mobile-nav-link">外掛</a><a href="/themes/" class="mobile-nav-link">主題</a><a href="/about/" class="mobile-nav-link">About</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/hexojs/hexo" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">開始使用</strong><a href="index.html" class="mobile-nav-link">概覽</a><a href="setup.html" class="mobile-nav-link">建立</a><a href="configuration.html" class="mobile-nav-link">配置</a><a href="commands.html" class="mobile-nav-link">指令</a><a href="migration.html" class="mobile-nav-link">轉移</a><strong class="mobile-nav-title">基本操作</strong><a href="writing.html" class="mobile-nav-link">寫作</a><a href="front-matter.html" class="mobile-nav-link">Front-matter</a><a href="tag-plugins.html" class="mobile-nav-link">標籤外掛</a><a href="asset-folders.html" class="mobile-nav-link">資產資料夾</a><a href="data-files.html" class="mobile-nav-link">資料檔案</a><a href="server.html" class="mobile-nav-link">伺服器</a><a href="generating.html" class="mobile-nav-link">產生檔案</a><strong class="mobile-nav-title">佈署</strong><a href="github-pages.html" class="mobile-nav-link current">GitHub Pages</a><a href="gitlab-pages.html" class="mobile-nav-link">GitLab Pages</a><a href="one-command-deployment.html" class="mobile-nav-link">One-Command Deployment</a><strong class="mobile-nav-title">自定</strong><a href="permalinks.html" class="mobile-nav-link">永久連結</a><a href="themes.html" class="mobile-nav-link">主題</a><a href="templates.html" class="mobile-nav-link">模版</a><a href="variables.html" class="mobile-nav-link">變數</a><a href="helpers.html" class="mobile-nav-link">輔助函數</a><a href="internationalization.html" class="mobile-nav-link">國際化 (i18n)</a><a href="syntax-highlight.html" class="mobile-nav-link">語法突顯</a><a href="plugins.html" class="mobile-nav-link">外掛</a><strong class="mobile-nav-title">其他</strong><a href="troubleshooting.html" class="mobile-nav-link">解決問題</a><a href="contributing.html" class="mobile-nav-link">貢獻</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>正體中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/github-pages.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-tw" selected>正體中文</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+        <option value="ru">Русский</option>
+      
+        <option value="ko">한국어</option>
+      
+        <option value="pt-br">Português (Brasil)</option>
+      
+        <option value="th">ภาษาไทย</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c83d2ec3440f40aec6d0e695ecec7ef3',
+  indexName: 'hexo_zh-tw',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

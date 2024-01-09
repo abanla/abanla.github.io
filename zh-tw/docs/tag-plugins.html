@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>標籤外掛（Tag Plugins） | Hexo</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://hexo.io/zh-tw/docs/tag-plugins.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://hexo.io/zh-tw/docs/tag-plugins">
+    
+      <link rel="alternative" hreflang="zh-tw" href="https://hexo.io/zh-tw/zh-tw/docs/tag-plugins">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://hexo.io/zh-cn/zh-tw/docs/tag-plugins">
+    
+      <link rel="alternative" hreflang="ru" href="https://hexo.io/ru/zh-tw/docs/tag-plugins">
+    
+      <link rel="alternative" hreflang="ko" href="https://hexo.io/ko/zh-tw/docs/tag-plugins">
+    
+      <link rel="alternative" hreflang="pt-br" href="https://hexo.io/pt-br/zh-tw/docs/tag-plugins">
+    
+      <link rel="alternative" hreflang="th" href="https://hexo.io/th/zh-tw/docs/tag-plugins">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="標籤外掛和 Front-matter 中的標籤不同，它們是用於在文章中快速插入特定內容的外掛。 Although you can write your posts in any formats, but the tag plugins will always be available and syntax remains the same. Tag plugins should not be wr">
+<meta property="og:type" content="website">
+<meta property="og:title" content="標籤外掛（Tag Plugins）">
+<meta property="og:url" content="https://hexo.io/zh-tw/docs/tag-plugins">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="標籤外掛和 Front-matter 中的標籤不同，它們是用於在文章中快速插入特定內容的外掛。 Although you can write your posts in any formats, but the tag plugins will always be available and syntax remains the same. Tag plugins should not be wr">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-01-09T07:29:52.547Z">
+<meta property="article:modified_time" content="2024-01-09T07:29:52.547Z">
+<meta property="article:author" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="hexojs">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48498357-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-tw/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-tw/docs/" class="main-nav-link">文件</a><a href="/zh-tw/api/" class="main-nav-link">API</a><a href="/news/" class="main-nav-link">新聞</a><a href="/plugins/" class="main-nav-link">外掛</a><a href="/themes/" class="main-nav-link">主題</a><a href="/about/" class="main-nav-link">About</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>正體中文</span></label>
+      <select id="lang-select" data-canonical="docs/tag-plugins.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-tw" selected>正體中文</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+          <option value="ru">Русский</option>
+        
+          <option value="ko">한국어</option>
+        
+          <option value="pt-br">Português (Brasil)</option>
+        
+          <option value="th">ภาษาไทย</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">標籤外掛（Tag Plugins）</h1>
+                <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/site/edit/master/source/zh-tw/docs/tag-plugins.md" class="article-edit-link" title="改善這篇文件"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>標籤外掛和 Front-matter 中的標籤不同，它們是用於在文章中快速插入特定內容的外掛。</p>
+<p>Although you can write your posts in any formats, but the tag plugins will always be available and syntax remains the same.</p>
+<p><em>Tag plugins should not be wrapped inside Markdown syntax, e.g. <code>[](&#123;% post_path lorem-ipsum %&#125;)</code> is not supported.</em></p>
+<h2 id="Block-Quote" class="article-heading"><a href="#Block-Quote" class="headerlink" title="Block Quote"></a>Block Quote<a class="article-anchor" href="#Block-Quote" aria-hidden="true"></a></h2><p>在文章中插入引言，可包含作者、來源和標題。</p>
+<p><strong>捷徑：</strong> quote</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>沒有提供參數，僅輸出普通的 blockquote</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote %&#125;</span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
+</blockquote>
+
+<p><strong>引用書上的句子</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</span><br><span class="line">Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
+<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
+
+<p><strong>引用 Twitter</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote @DevDocs https://twitter.com/devdocs/status/356095192085962752 %&#125;</span><br><span class="line">NEW: DevDocs now comes with syntax highlighting. http://devdocs.io</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote><p>NEW: DevDocs now comes with syntax highlighting. <a target="_blank" rel="noopener external nofollow noreferrer" href="http://devdocs.io/">http://devdocs.io</a></p>
+<footer><strong>@DevDocs</strong><cite><a target="_blank" rel="noopener external nofollow noreferrer" href="https://twitter.com/devdocs/status/356095192085962752">twitter.com/devdocs/status/356095192085962752</a></cite></footer></blockquote>
+
+<p><strong>引用網路上的文章</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html Welcome to Island Marketing %&#125;</span><br><span class="line">Every interaction is both precious and an opportunity to delight.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
+<footer><strong>Seth Godin</strong><cite><a target="_blank" rel="noopener external nofollow noreferrer" href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html">Welcome to Island Marketing</a></cite></footer></blockquote>
+
+<h2 id="Code-Block" class="article-heading"><a href="#Code-Block" class="headerlink" title="Code Block"></a>Code Block<a class="article-anchor" href="#Code-Block" aria-hidden="true"></a></h2><p>在文章中插入程式碼。</p>
+<p><strong>捷徑：</strong> code</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% codeblock [title] [lang:language] [url] [link text] [additional options] %&#125;</span><br><span class="line">code snippet</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Specify additional options in <code>option:value</code> format, e.g. <code>line_number:false first_line:5</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Extra Options</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>line_number</code></td>
+<td>Show line number</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>line_threshold</code></td>
+<td>Only show line numbers as long as the numbers of lines of the code block exceed such threshold.</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>highlight</code></td>
+<td>Enable code highlighting</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>first_line</code></td>
+<td>Specify the first line number</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>mark</code></td>
+<td>Line highlight specific line(s), each value separated by a comma. Specify number range using a dash<br>Example: <code>mark:1,4-7,10</code> will mark line 1, 4 to 7 and 10.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>wrap</code></td>
+<td>Wrap the code block in <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table"><code>&lt;table&gt;</code></a></td>
+<td><code>true</code></td>
+</tr>
+</tbody></table>
+<p><strong>普通的程式碼區塊</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% codeblock %&#125;</span><br><span class="line">alert(&#x27;Hello World!&#x27;);</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alert(&#x27;Hello World!&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>指定語言</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% codeblock lang:objc %&#125;</span><br><span class="line">[rectangle setX: 10 y: 10 width: 20 height: 20];</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br></pre></td></tr></table></figure>
+
+<p><strong>加上說明</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% codeblock Array.map %&#125;</span><br><span class="line">array.map(callback[, thisArg])</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><figcaption><span>Array.map</span></figcaption><table><tr><td class="code"><pre><span class="line">array.map(callback[, thisArg])</span><br></pre></td></tr></table></figure>
+
+<p><strong>加上說明和網址</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% codeblock _.compact http://underscorejs.org/#compact Underscore.js %&#125;</span><br><span class="line">_.compact([0, 1, false, 2, &#x27;&#x27;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><figcaption><span>_.compact</span><a target="_blank" rel="noopener external nofollow noreferrer" href="http://underscorejs.org/#compact">Underscore.js</a></figcaption><table><tr><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#x27;&#x27;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
+
+<h2 id="Backtick-Code-Block" class="article-heading"><a href="#Backtick-Code-Block" class="headerlink" title="Backtick Code Block"></a>Backtick Code Block<a class="article-anchor" href="#Backtick-Code-Block" aria-hidden="true"></a></h2><p>另一種形式的程式碼區塊。</p>
+
+&#96``[language] [title] [url] [link text]
+code snippet
+&#96``
+
+
+<h2 id="Pull-Quote" class="article-heading"><a href="#Pull-Quote" class="headerlink" title="Pull Quote"></a>Pull Quote<a class="article-anchor" href="#Pull-Quote" aria-hidden="true"></a></h2><p>在文章中插入 Pull quote。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% pullquote [class] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endpullquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="jsFiddle-deleted-in-v7-0-0" class="article-heading"><a href="#jsFiddle-deleted-in-v7-0-0" class="headerlink" title="jsFiddle (deleted in v7.0.0)"></a>jsFiddle (deleted in <code>v7.0.0</code>)<a class="article-anchor" href="#jsFiddle-deleted-in-v7-0-0" aria-hidden="true"></a></h2><blockquote class="note warn"><p>Please use <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo-tag-embed">hexo-tag-embed</a> instead if you use <code>v7.0.0+</code>.</p>
+</blockquote>
+
+<p>在文章中嵌入 jsFiddle。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% jsfiddle shorttag [tabs] [skin] [width] [height] %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Gist-deleted-in-v7-0-0" class="article-heading"><a href="#Gist-deleted-in-v7-0-0" class="headerlink" title="Gist (deleted in v7.0.0)"></a>Gist (deleted in <code>v7.0.0</code>)<a class="article-anchor" href="#Gist-deleted-in-v7-0-0" aria-hidden="true"></a></h2><blockquote class="note warn"><p>Please use <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo-tag-embed">hexo-tag-embed</a> instead if you use <code>v7.0.0+</code>.</p>
+</blockquote>
+
+<p>在文章中嵌入 Gist。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% gist gist_id [filename] %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="iframe" class="article-heading"><a href="#iframe" class="headerlink" title="iframe"></a>iframe<a class="article-anchor" href="#iframe" aria-hidden="true"></a></h2><p>在文章中插入 iframe。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% iframe url [width] [height] %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Image" class="article-heading"><a href="#Image" class="headerlink" title="Image"></a>Image<a class="article-anchor" href="#Image" aria-hidden="true"></a></h2><p>在文章中插入指定大小的圖片。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% img [class names] /path/to/image [width] [height] &#x27;&quot;title text&quot; &quot;alt text&quot;&#x27; %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Link" class="article-heading"><a href="#Link" class="headerlink" title="Link"></a>Link<a class="article-anchor" href="#Link" aria-hidden="true"></a></h2><p>在文章中插入連結，並在外連連結自動加上 <code>target=&quot;_blank&quot;</code> 屬性。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% link text url [external] [title] %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Include-Code" class="article-heading"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code<a class="article-anchor" href="#Include-Code" aria-hidden="true"></a></h2><p>插入 <code>source/downloads/code</code> 資料夾內的程式檔，資料夾取决于你在配置文件中 <code>code_dir</code> 的配置。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Youtube-deleted-in-v7-0-0" class="article-heading"><a href="#Youtube-deleted-in-v7-0-0" class="headerlink" title="Youtube (deleted in v7.0.0)"></a>Youtube (deleted in <code>v7.0.0</code>)<a class="article-anchor" href="#Youtube-deleted-in-v7-0-0" aria-hidden="true"></a></h2><blockquote class="note warn"><p>Please use <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo-tag-embed">hexo-tag-embed</a> instead if you use <code>v7.0.0+</code>.</p>
+</blockquote>
+
+<p>在文章中插入 Youtube 影片。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% youtube video_id [type] [cookie] %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Examples" class="article-heading"><a href="#Examples" class="headerlink" title="Examples"></a>Examples<a class="article-anchor" href="#Examples" aria-hidden="true"></a></h3><p><strong>影片</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% youtube lJIrF4YjHfQ %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>播放列表</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% youtube PL9hW1uS6HUfscJ9DHkOSoOX45MjXduUxo &#x27;playlist&#x27; %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>隱私模式</strong></p>
+<p>禁止 YouTube cookie</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% youtube lJIrF4YjHfQ false %&#125;</span><br><span class="line">&#123;% youtube PL9hW1uS6HUfscJ9DHkOSoOX45MjXduUxo &#x27;playlist&#x27; false %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Vimeo-deleted-in-v7-0-0" class="article-heading"><a href="#Vimeo-deleted-in-v7-0-0" class="headerlink" title="Vimeo (deleted in v7.0.0)"></a>Vimeo (deleted in <code>v7.0.0</code>)<a class="article-anchor" href="#Vimeo-deleted-in-v7-0-0" aria-hidden="true"></a></h2><blockquote class="note warn"><p>Please use <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/hexo-tag-embed">hexo-tag-embed</a> instead if you use <code>v7.0.0+</code>.</p>
+</blockquote>
+
+<p>在文章中插入 Vimeo 影片。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% vimeo video_id %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="引用文章" class="article-heading"><a href="#引用文章" class="headerlink" title="引用文章"></a>引用文章<a class="article-anchor" href="#引用文章" aria-hidden="true"></a></h2><p>引用其他文章的連結。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_path filename %&#125;</span><br><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>You can ignore permalink and folder information, like languages and dates, when using this tag.</p>
+<p>For instance: <code>{% post_link how-to-bake-a-cake %}</code>.</p>
+<p>This will work as long as the filename of the post is <code>how-to-bake-a-cake.md</code>, even if the post is located at <code>source/posts/2015-02-my-family-holiday</code> and has permalink <code>2018/en/how-to-bake-a-cake</code>.</p>
+<p>You can customize the text to display, instead of displaying the post’s title.</p>
+<p>Post’s title and custom text are escaped by default. You can use the <code>escape</code> option to disable escaping.</p>
+<p>For instance:</p>
+<p><strong>Display title of the post.</strong></p>
+<p><code>{% post_link hexo-3-8-released %}</code></p>
+<a href="/news/2018/10/19/hexo-3-8-released/" title="Hexo 3.8.0 Released">Hexo 3.8.0 Released</a>
+
+<p><strong>Display custom text.</strong></p>
+<p><code>{% post_link hexo-3-8-released 'Link to a post' %}</code></p>
+<a href="/news/2018/10/19/hexo-3-8-released/" title="Hexo 3.8.0 Released">Link to a post</a>
+
+<p><strong>Escape title.</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link hexo-4-released &#x27;How to use &lt;b&gt; tag in title&#x27; %&#125;</span><br></pre></td></tr></table></figure>
+<a href="/news/2019/10/14/hexo-4-released/" title="Hexo 4.0.0 Released">How to use &lt;b&gt; tag in title</a>
+
+<p><strong>Do not escape title.</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link hexo-4-released &#x27;&lt;b&gt;bold&lt;/b&gt; custom title&#x27; false %&#125;</span><br></pre></td></tr></table></figure>
+<a href="/news/2019/10/14/hexo-4-released/" title="Hexo 4.0.0 Released"><b>bold</b> custom title</a>
+
+<h2 id="引用資產" class="article-heading"><a href="#引用資產" class="headerlink" title="引用資產"></a>引用資產<a class="article-anchor" href="#引用資產" aria-hidden="true"></a></h2><p>引用文章的資產。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img [class names] slug [width] [height] [title text [alt text]] %&#125;</span><br><span class="line">&#123;% asset_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Embed-image" class="article-heading"><a href="#Embed-image" class="headerlink" title="Embed image"></a>Embed image<a class="article-anchor" href="#Embed-image" aria-hidden="true"></a></h3><p><em>hexo-renderer-marked 3.1.0+ can (optionally) resolves the post’s path of an image automatically, refer to <a href="/docs/asset-folders#Embedding-an-image-using-markdown">this section</a> on how to enable it.</em></p>
+<p>“foo.jpg” is located at <code>http://example.com/2020/01/02/hello/foo.jpg</code>.</p>
+<p><strong>Default (no option)</strong></p>
+<p><code>&#123;% asset_img foo.jpg %&#125;</code></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/2020/01/02/hello/foo.jpg&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Custom class</strong></p>
+<p><code>&#123;% asset_img post-image foo.jpg %&#125;</code></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/2020/01/02/hello/foo.jpg&quot;</span> <span class="attr">class</span>=<span class="string">&quot;post-image&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Display size</strong></p>
+<p><code>&#123;% asset_img foo.jpg 500 400 %&#125;</code></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/2020/01/02/hello/foo.jpg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;500&quot;</span> <span class="attr">height</span>=<span class="string">&quot;400&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Title &amp; Alt</strong></p>
+<p><code>&#123;% asset_img logo.svg "lorem ipsum'dolor'" %&#125;</code></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/2020/01/02/hello/foo.jpg&quot;</span> <span class="attr">title</span>=<span class="string">&quot;lorem ipsum&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;dolor&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="URL" class="article-heading"><a href="#URL" class="headerlink" title="URL"></a>URL<a class="article-anchor" href="#URL" aria-hidden="true"></a></h2><h3 id="url-for-7-0-0" class="article-heading"><a href="#url-for-7-0-0" class="headerlink" title="url_for (7.0.0+)"></a>url_for (7.0.0+)<a class="article-anchor" href="#url-for-7-0-0" aria-hidden="true"></a></h3><p>Returns a url with the root path prefixed. Output is encoded automatically.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% url_for text path [relative] %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Examples:</strong></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">_config.yml</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/blog/</span> <span class="comment"># example</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% url_for blog index.html %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/blog/index.html&quot;</span>&gt;</span>blog<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Relative link, follows <code>relative_link</code> option by default<br>e.g. post&#x2F;page path is ‘&#x2F;foo&#x2F;bar&#x2F;index.html’</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">_config.yml</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% url_for blog index.html %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;../../index.html&quot;</span>&gt;</span>blog<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>You could also disable it to output a non-relative link, even when <code>relative_link</code> is enabled and vice versa.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% url_for blog index.html false %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/index.html&quot;</span>&gt;</span>blog<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="full-url-for-7-0-0" class="article-heading"><a href="#full-url-for-7-0-0" class="headerlink" title="full_url_for (7.0.0+)"></a>full_url_for (7.0.0+)<a class="article-anchor" href="#full-url-for-7-0-0" aria-hidden="true"></a></h3><p>Returns a url with the <code>config.url</code> prefixed. Output is encoded automatically.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% full_url_for text path %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Examples:</strong></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">_config.yml</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://example.com/blog</span> <span class="comment"># example</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% full_url_for index /a/path %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://example.com/blog/a/path&quot;</span>&gt;</span>index<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Raw" class="article-heading"><a href="#Raw" class="headerlink" title="Raw"></a>Raw<a class="article-anchor" href="#Raw" aria-hidden="true"></a></h2><p>如果您要在文章中插入 Swig 標籤，可以試著使用 Raw 標籤，以免發生解析異常。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2024-01-09T07:29:52.547Z" itemprop="dateModified">上次更新：2024-01-09</time>
+                <a href="front-matter.html" class="article-footer-prev" title="Front-matter"><i class="fa fa-chevron-left"></i><span>上一頁</span></a><a href="asset-folders.html" class="article-footer-next" title="資產資料夾"><span>下一頁</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'hexojs';
+  var disqus_url = 'https://hexo.io/zh-tw/docs/tag-plugins.html';
+  var disqus_title = "標籤外掛（Tag Plugins）";
+  var disqus_config = function(){
+    this.language = 'zh_TW';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目錄</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Block-Quote"><span class="toc-text">Block Quote</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-Block"><span class="toc-text">Code Block</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Backtick-Code-Block"><span class="toc-text">Backtick Code Block</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pull-Quote"><span class="toc-text">Pull Quote</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jsFiddle-deleted-in-v7-0-0"><span class="toc-text">jsFiddle (deleted in v7.0.0)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gist-deleted-in-v7-0-0"><span class="toc-text">Gist (deleted in v7.0.0)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iframe"><span class="toc-text">iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Image"><span class="toc-text">Image</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Link"><span class="toc-text">Link</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Include-Code"><span class="toc-text">Include Code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Youtube-deleted-in-v7-0-0"><span class="toc-text">Youtube (deleted in v7.0.0)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples"><span class="toc-text">Examples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vimeo-deleted-in-v7-0-0"><span class="toc-text">Vimeo (deleted in v7.0.0)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%96%87%E7%AB%A0"><span class="toc-text">引用文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E8%B3%87%E7%94%A2"><span class="toc-text">引用資產</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Embed-image"><span class="toc-text">Embed image</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#URL"><span class="toc-text">URL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#url-for-7-0-0"><span class="toc-text">url_for (7.0.0+)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#full-url-for-7-0-0"><span class="toc-text">full_url_for (7.0.0+)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Raw"><span class="toc-text">Raw</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到頁首</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">開始使用</strong><a href="index.html" class="sidebar-link">概覽</a><a href="setup.html" class="sidebar-link">建立</a><a href="configuration.html" class="sidebar-link">配置</a><a href="commands.html" class="sidebar-link">指令</a><a href="migration.html" class="sidebar-link">轉移</a><strong class="sidebar-title">基本操作</strong><a href="writing.html" class="sidebar-link">寫作</a><a href="front-matter.html" class="sidebar-link">Front-matter</a><a href="tag-plugins.html" class="sidebar-link current">標籤外掛</a><a href="asset-folders.html" class="sidebar-link">資產資料夾</a><a href="data-files.html" class="sidebar-link">資料檔案</a><a href="server.html" class="sidebar-link">伺服器</a><a href="generating.html" class="sidebar-link">產生檔案</a><strong class="sidebar-title">佈署</strong><a href="github-pages.html" class="sidebar-link">GitHub Pages</a><a href="gitlab-pages.html" class="sidebar-link">GitLab Pages</a><a href="one-command-deployment.html" class="sidebar-link">One-Command Deployment</a><strong class="sidebar-title">自定</strong><a href="permalinks.html" class="sidebar-link">永久連結</a><a href="themes.html" class="sidebar-link">主題</a><a href="templates.html" class="sidebar-link">模版</a><a href="variables.html" class="sidebar-link">變數</a><a href="helpers.html" class="sidebar-link">輔助函數</a><a href="internationalization.html" class="sidebar-link">國際化 (i18n)</a><a href="syntax-highlight.html" class="sidebar-link">語法突顯</a><a href="plugins.html" class="sidebar-link">外掛</a><strong class="sidebar-title">其他</strong><a href="troubleshooting.html" class="sidebar-link">解決問題</a><a href="contributing.html" class="sidebar-link">貢獻</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2024 <a href="https://github.com/hexojs/hexo/graphs/contributors" rel="external nofollow noreferrer" target="_blank">Hexo</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://www.netlify.com/" rel="external nofollow noreferrer" class="footer-link" target="_blank"><img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" style="margin-bottom:-14px"/></a>
+      <a href="https://twitter.com/hexojs" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/hexojs/hexo" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-tw/docs/" class="mobile-nav-link">文件</a><a href="/zh-tw/api/" class="mobile-nav-link">API</a><a href="/news/" class="mobile-nav-link">新聞</a><a href="/plugins/" class="mobile-nav-link">外掛</a><a href="/themes/" class="mobile-nav-link">主題</a><a href="/about/" class="mobile-nav-link">About</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/hexojs/hexo" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">開始使用</strong><a href="index.html" class="mobile-nav-link">概覽</a><a href="setup.html" class="mobile-nav-link">建立</a><a href="configuration.html" class="mobile-nav-link">配置</a><a href="commands.html" class="mobile-nav-link">指令</a><a href="migration.html" class="mobile-nav-link">轉移</a><strong class="mobile-nav-title">基本操作</strong><a href="writing.html" class="mobile-nav-link">寫作</a><a href="front-matter.html" class="mobile-nav-link">Front-matter</a><a href="tag-plugins.html" class="mobile-nav-link current">標籤外掛</a><a href="asset-folders.html" class="mobile-nav-link">資產資料夾</a><a href="data-files.html" class="mobile-nav-link">資料檔案</a><a href="server.html" class="mobile-nav-link">伺服器</a><a href="generating.html" class="mobile-nav-link">產生檔案</a><strong class="mobile-nav-title">佈署</strong><a href="github-pages.html" class="mobile-nav-link">GitHub Pages</a><a href="gitlab-pages.html" class="mobile-nav-link">GitLab Pages</a><a href="one-command-deployment.html" class="mobile-nav-link">One-Command Deployment</a><strong class="mobile-nav-title">自定</strong><a href="permalinks.html" class="mobile-nav-link">永久連結</a><a href="themes.html" class="mobile-nav-link">主題</a><a href="templates.html" class="mobile-nav-link">模版</a><a href="variables.html" class="mobile-nav-link">變數</a><a href="helpers.html" class="mobile-nav-link">輔助函數</a><a href="internationalization.html" class="mobile-nav-link">國際化 (i18n)</a><a href="syntax-highlight.html" class="mobile-nav-link">語法突顯</a><a href="plugins.html" class="mobile-nav-link">外掛</a><strong class="mobile-nav-title">其他</strong><a href="troubleshooting.html" class="mobile-nav-link">解決問題</a><a href="contributing.html" class="mobile-nav-link">貢獻</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>正體中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/tag-plugins.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-tw" selected>正體中文</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+        <option value="ru">Русский</option>
+      
+        <option value="ko">한국어</option>
+      
+        <option value="pt-br">Português (Brasil)</option>
+      
+        <option value="th">ภาษาไทย</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c83d2ec3440f40aec6d0e695ecec7ef3',
+  indexName: 'hexo_zh-tw',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>
